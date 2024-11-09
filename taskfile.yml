@@ -61,16 +61,14 @@ tasks:
     desc: Poetry local setup and install
     cmds:
       - poetry config virtualenvs.in-project true
-      - poetry env info --path
       - rm -rf .venv
       - rm -rf venv
       - poetry install
-    silent: true
+      - poetry env info --path
 
   poetry_update:
     deps: [assert]
     desc: Update poetry dependencies
-    internal: true
     cmds:
       - poetry update
       - poetry self update
@@ -79,6 +77,5 @@ tasks:
     aliases: [test]
     deps: [assert]
     desc: Run tests using poetry (documentation)
-    internal: true
     cmds:
       - poetry run pytest
