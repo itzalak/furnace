@@ -1,11 +1,5 @@
 version: '3'
 
-includes:
-  python: ./taskfiles/taskfile.python.yml
-  precommit: ./taskfiles/taskfile.precommit.yml
-  poetry: ./taskfiles/taskfile.poetry.yml
-  neovim: ./taskfiles/taskfile.neovim.yml
-
 tasks:
 
   default:
@@ -32,30 +26,27 @@ tasks:
     silent: true
     internal: true
     vars:
-      REQUIRED_TOOLS: pre-commit, poetry
+      REQUIRED_TOOLS: python
 
   setup:
     deps: [assert]
-    desc: Set up poetry and pre-commit
+    desc: Poetry local setup and install
     cmds:
-      - task: precommit:setup
-      - task: poetry:setup
+      - poetry config virtualenvs.in-project true
+      - rm -rf .venv
+      - rm -rf venv
+      - poetry install
+      - poetry env info --path
 
   update:
     deps: [assert]
-    desc: Update poetry and pre-commit
+    desc: Update poetry dependencies
     cmds:
-      - task: poetry:update
-      - task: precommit:update
-
-  run:
-    deps: [assert]
-    desc: Run pre-commit on all files
-    cmds:
-      - task: precommit:run
+      - poetry update
+      - poetry self update
 
   test:
     deps: [assert]
-    desc: Run tests using poetry
+    desc: Run tests using poetry (documentation)
     cmds:
-      - task: poetry:test
+      - poetry run pytest

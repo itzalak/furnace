@@ -1,0 +1,57 @@
+version: '3'
+
+vars:
+  STOW_CMD: "stow --restow --verbose --dir={{.ROOT_DIR}}/nvim --target={{.HOME}}"
+  DESTOW_CMD: "stow --delete --verbose --dir={{.ROOT_DIR}}/nvim --target={{.HOME}}"
+
+tasks:
+
+  default:
+    internal: true
+    desc: Default
+    cmds:
+      - |
+        echo "Working dir: {{.USER_WORKING_DIR}}"
+        echo "OS: {{OS}}"
+        task --list
+    silent: true
+
+  assert:
+    cmds:
+      - for:
+          var: REQUIRED_TOOLS
+          split: ','
+          as: TOOL
+        cmd: |
+          [ -n "$(which {{ .TOOL }})" ] || ( \
+            echo "ERROR: `{{ .TOOL }}` not found" && exit 1; \
+          )
+    silent: true
+    internal: true
+
+  minimal:
+    desc: Minimal installation of neovim and required packages
+    platforms: [linux]
+    cmds:
+      - task: assert
+        vars:
+          REQUIRED_TOOLS: pacman
+      - "{{.ROOT_DIR}}/nvim/installation/pacman-neovim.sh"
+
+  stow:
+    deps: [assert]
+    desc: Symlink neovim
+    cmds:
+      - task: assert
+        vars:
+          REQUIRED_TOOLS: nvim, stow
+      - "{{.STOW_CMD}} nvim"
+
+  destow:
+    deps: [assert]
+    desc: Delete neovim symlink
+    cmds:
+      - task: assert
+        vars:
+          REQUIRED_TOOLS: nvim, stow
+      - "{{.DESTOW_CMD}} nvim"

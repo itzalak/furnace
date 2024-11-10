@@ -1,19 +1,12 @@
 version: '3'
 
-includes:
-  python: ./taskfiles/taskfile.python.yml
-  precommit: ./taskfiles/taskfile.precommit.yml
-  poetry: ./taskfiles/taskfile.poetry.yml
-  neovim: ./taskfiles/taskfile.neovim.yml
-
 tasks:
 
   default:
+    internal: true
     desc: Default
     cmds:
       - |
-        echo "Home dir: {{.HOME}}"
-        echo "Root dir: {{.ROOT_DIR}}"
         echo "Working dir: {{.USER_WORKING_DIR}}"
         echo "OS: {{OS}}"
         task --list
@@ -32,30 +25,23 @@ tasks:
     silent: true
     internal: true
     vars:
-      REQUIRED_TOOLS: pre-commit, poetry
+      REQUIRED_TOOLS: pre-commit
 
   setup:
     deps: [assert]
-    desc: Set up poetry and pre-commit
+    desc: Initialize pre-commit
     cmds:
-      - task: precommit:setup
-      - task: poetry:setup
+      - pre-commit install
 
   update:
     deps: [assert]
-    desc: Update poetry and pre-commit
+    desc: Update pre-commit
     cmds:
-      - task: poetry:update
-      - task: precommit:update
+      - pre-commit install
+      - pre-commit autoupdate
 
   run:
     deps: [assert]
     desc: Run pre-commit on all files
     cmds:
-      - task: precommit:run
-
-  test:
-    deps: [assert]
-    desc: Run tests using poetry
-    cmds:
-      - task: poetry:test
+      - pre-commit run --color always --all-files

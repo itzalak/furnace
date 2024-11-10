@@ -1,0 +1,69 @@
+version: '3'
+
+tasks:
+
+  default:
+    internal: true
+    desc: Default
+    cmds:
+      - |
+        echo "Working dir: {{.USER_WORKING_DIR}}"
+        echo "OS: {{OS}}"
+        task --list
+    silent: true
+
+  assert:
+    cmds:
+      - for:
+          var: REQUIRED_TOOLS
+          split: ','
+          as: TOOL
+        cmd: |
+          [ -n "$(which {{ .TOOL }})" ] || ( \
+            echo "ERROR: `{{ .TOOL }}` not found" && exit 1; \
+          )
+    silent: true
+    internal: true
+
+  setup:
+    desc: Pynvim and pipx installation
+    cmds:
+      - task: install
+      - task: pipx
+      - task: pyenv
+    silent: true
+
+  install:
+    desc: Installation of python related packages
+    platforms: [linux]
+    cmds:
+      - task: assert
+        vars:
+          REQUIRED_TOOLS: pacman
+      - "{{.ROOT_DIR}}/taskfiles/scripts/11-python.sh"
+
+  pipx:
+    deps: [assert]
+    internal: true
+    desc: Install pipx packages of poetry and commitizen
+    cmds:
+      - task: assert
+        vars:
+          REQUIRED_TOOLS: python, pip
+      - pipx install black
+      - pipx install ruff
+      - pipx install poetry
+      - pipx install commitizen
+      - pipx install pre-commit
+      - pipx install cookiecutter
+      - pipx ensurepath
+
+  pyenv:
+    internal: true
+    desc: Install python through pyenv
+    cmds:
+      - task: assert
+        vars:
+          REQUIRED_TOOLS: python, pip, pyenv
+      - pyenv install 3.13.0
+      - pyenv global 3.13.0
