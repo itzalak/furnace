@@ -1,3 +1,9 @@
+## v0.1.5 (2024-11-17)
+
+### Fixed
+
+- correct link to submodules
+
 ## v0.1.4 (2024-11-17)
 
 ### Fixed
