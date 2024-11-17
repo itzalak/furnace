@@ -33,6 +33,28 @@ Run minimal setup script to install required tools
 curl -fsSL https://raw.githubusercontent.com/itzalak/furnace/refs/heads/main/taskfiles/scripts/00-minimal-setup.sh | bash
 ```
 
+### Installation order
+
+- Archinstall
+
+Revisit
+
+- Run minimal-setup from curl
+- Setup ssh
+- Clone repository
+- Initialize neovim submodule
+- Setup nvim
+- Setup bluetooth
+
+Unsure
+
+- Python
+
+Missing but important
+
+- Git alias
+- Bash not recognizing paths after installation of python
+
 ## Requirements
 
 - Describe any requirements
