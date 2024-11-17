@@ -1,3 +1,9 @@
+## v0.1.7 (2024-11-17)
+
+### Fixed
+
+- fix bluetooth script
+
 ## v0.1.6 (2024-11-17)
 
 ### Changed
