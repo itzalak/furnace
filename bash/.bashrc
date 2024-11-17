@@ -1,6 +1,10 @@
 set -o vi
 
 # If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+PS1='[\u@\h \W]\$ '
+
 case $- in
 *i*) ;;
 *) return ;;
@@ -33,8 +37,10 @@ export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_STATE_HOME="$HOME/.local/state"
 
 # Aliases
-alias la='ls -lAh'
-alias ll='ls -lh'
+alias la='ls -lAh --color=auto'
+alias ll='ls -lh --color=auto'
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
 alias ga='git add'
 alias gap='git add -p'
 alias gaa='git add --all'
@@ -49,5 +55,10 @@ alias gm='git switch main'
 alias gsp='git stash pop'
 alias gst='git status'
 alias gsu='git stash -u -m'
+alias v='nvim'
+alias t='go-task'
 
 export PATH="/usr/local/bin:$PATH"
+
+# Created by `pipx` on 2024-11-17 13:16:30
+export PATH="$PATH:/home/lipwig/.local/bin"

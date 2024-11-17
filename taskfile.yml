@@ -1,6 +1,7 @@
 version: '3'
 
 includes:
+  bash: ./taskfiles/taskfile.bash.yml
   bluetooth: ./taskfiles/taskfile.bluetooth.yml
   python: ./taskfiles/taskfile.python.yml
   precommit: ./taskfiles/taskfile.precommit.yml

@@ -1,0 +1,43 @@
+version: '3'
+
+tasks:
+
+  default:
+    internal: true
+    desc: Default
+    cmds:
+      - |
+        echo "Working dir: {{.USER_WORKING_DIR}}"
+        echo "OS: {{OS}}"
+        task --list
+    silent: true
+
+  assert:
+    cmds:
+      - for:
+          var: REQUIRED_TOOLS
+          split: ','
+          as: TOOL
+        cmd: |
+          [ -n "$(which {{ .TOOL }})" ] || ( \
+            echo "ERROR: `{{ .TOOL }}` not found" && exit 1; \
+          )
+    silent: true
+    internal: true
+    vars:
+      REQUIRED_TOOLS: bash, stow
+
+  stow:
+    deps: [assert]
+    desc: Symlink bashrc
+    cmds:
+      - rm -rf {{.HOME}}/.bashrc
+      - "stow --restow --verbose --dir={{.ROOT_DIR}} --target={{.HOME}} bash"
+
+  destow:
+    deps: [assert]
+    desc: Symlink bashrc
+    cmds:
+      - rm -rf {{.HOME}}/.bashrc
+      - "stow --delete --verbose --dir={{.ROOT_DIR}} --target={{.HOME}} bash"
+

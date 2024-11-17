@@ -1,9 +1,5 @@
 version: '3'
 
-vars:
-  STOW_CMD: "stow --restow --verbose --dir={{.ROOT_DIR}}/nvim --target={{.HOME}}"
-  DESTOW_CMD: "stow --delete --verbose --dir={{.ROOT_DIR}}/nvim --target={{.HOME}}"
-
 tasks:
 
   default:
@@ -56,7 +52,8 @@ tasks:
       - task: assert
         vars:
           REQUIRED_TOOLS: nvim, stow
-      - "{{.STOW_CMD}} nvim"
+      - "stow --restow --verbose --dir={{.ROOT_DIR}}/nvim --target={{.HOME}} nvim"
+
 
   destow:
     deps: [assert]
@@ -65,4 +62,5 @@ tasks:
       - task: assert
         vars:
           REQUIRED_TOOLS: nvim, stow
-      - "{{.DESTOW_CMD}} nvim"
+      - "stow --delete --verbose --dir={{.ROOT_DIR}}/nvim --target={{.HOME}} nvim"
+
