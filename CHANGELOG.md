@@ -1,3 +1,9 @@
+## v0.1.4 (2024-11-17)
+
+### Fixed
+
+- correct neovim setup steps
+
 ## v0.1.3 (2024-11-17)
 
 ### Changed
