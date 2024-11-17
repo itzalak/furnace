@@ -1,0 +1,37 @@
+version: '3'
+
+tasks:
+
+  default:
+    desc: Default
+    cmds:
+      - |
+        echo "Home dir: {{.HOME}}"
+        echo "Root dir: {{.ROOT_DIR}}"
+        echo "Working dir: {{.USER_WORKING_DIR}}"
+        echo "OS: {{OS}}"
+        task --list
+    silent: true
+
+  assert:
+    cmds:
+      - for:
+          var: REQUIRED_TOOLS
+          split: ','
+          as: TOOL
+        cmd: |
+          [ -n "$(which {{ .TOOL }})" ] || ( \
+            echo "ERROR: `{{ .TOOL }}` not found" && exit 1; \
+          )
+    silent: true
+    internal: true
+    vars:
+      REQUIRED_TOOLS: pacman
+
+  setup:
+    desc: Install and setup bluetooth
+    deps: [assert]
+    platforms: [linux]
+    cmds:
+      - "{{.ROOT_DIR}}/taskfiles/scripts/02-wireless-bluetooth.sh"
+    silent: true
