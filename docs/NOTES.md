@@ -3,7 +3,7 @@
 Starting from a blank slate gives me a few questions and opportunities, first and foremost, un-bloat the installation,
 second split by need and requirements.
 
-Relevant documentation
+## Relevant documentation
 
 - <https://github.com/archlinux/archinstall>
 - <https://wiki.archlinux.org/title/Installation_guide>
@@ -16,7 +16,7 @@ Relevant documentation
 - <https://wiki.archlinux.org/title/ASUS_Linux>
 - <https://www.reddit.com/r/ZephyrusG14/comments/1ah226s/ive_made_another_rog_control_daemon_for_linux/>
 
-Stuff I am concerned
+## Concerns
 
 - Not sure  how to setup dual boot with btrfs and partitions
     - Seems resource intensive and error prone
@@ -38,3 +38,27 @@ Stuff I am concerned
     - probably don't need supergfxctl
 - I am starting to think asusctl is not reasonable or valuable, optionally there is rog-daemon, still unsure
     - <https://aur.archlinux.org/packages/rog-daemon>
+- Should I try EndeavourOS?
+    - uses calamares
+    - has default configurations already set for many apps
+
+## Open questions
+
+- Can I configure btrfs 'partitions' after installation?
+    - For snapshots I think yes, others still unclear
+- EFI size for Nvidia + dual boot
+- Archinstall did not install AMD graphics, can I start with AMD and later install Nvidia? How?
+- Basic setup of bash is dreadful, needs revisiting
+-
+
+## Clarifications
+
+It is possible to set up the disk configuration before using archinstall, however the configuration is not
+straightforward, and dual booting was simple for win 11, just copying the bootloader was enough, however,
+no clue on other linux installations. Needs research.
+
+## Tools to try
+
+- flatpack
+- alpaca for ollama
+-
