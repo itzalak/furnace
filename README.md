@@ -45,10 +45,12 @@ Revisit
 - Initialize neovim submodule
 - Setup nvim
 - Setup bluetooth
+- Setup bash
 
 Unsure
 
 - Python
+- Yay
 
 Missing but important
 

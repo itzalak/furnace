@@ -49,7 +49,6 @@ second split by need and requirements.
 - EFI size for Nvidia + dual boot
 - Archinstall did not install AMD graphics, can I start with AMD and later install Nvidia? How?
 - Basic setup of bash is dreadful, needs revisiting
--
 
 ## Clarifications
 
@@ -61,4 +60,3 @@ no clue on other linux installations. Needs research.
 
 - flatpack
 - alpaca for ollama
--
