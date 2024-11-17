@@ -1,3 +1,13 @@
+## v0.1.11 (2024-11-17)
+
+### Changed
+
+- Add yay installation script
+
+### Notes
+
+- update documentation
+
 ## v0.1.10 (2024-11-17)
 
 ### Changed
