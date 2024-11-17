@@ -1,3 +1,14 @@
+## v0.1.9 (2024-11-17)
+
+### Changed
+
+- add experimental bash config
+
+### Notes
+
+- Update leanings and thoughts
+- update on notes
+
 ## v0.1.8 (2024-11-17)
 
 ### Changed
