@@ -49,4 +49,13 @@ tasks:
     deps: [assert]
     desc: Run tests using poetry (documentation)
     cmds:
+      - task: refresh_venv
       - poetry run pytest
+
+  refresh_venv:
+    deps: [assert]
+    desc: Poetry recreate venv
+    cmds:
+      - rm -rf .venv
+      - rm -rf venv
+      - poetry install
