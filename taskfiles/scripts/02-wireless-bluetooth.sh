@@ -14,7 +14,7 @@ echo "Installing wireless and bluetooth related packages"
 
 for PKG in "${PKGS[@]}"; do
   echo "Installing package: $PKG"
-  pacman -S "$PKG" --noconfirm --needed
+  sudo pacman -S "$PKG" --noconfirm --needed
 done
 
 echo "Setting wireless and bluetooth services"
