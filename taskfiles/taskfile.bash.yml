@@ -25,19 +25,38 @@ tasks:
     silent: true
     internal: true
     vars:
-      REQUIRED_TOOLS: bash, stow
+      REQUIRED_TOOLS: bash, stow, pacman
+
+  setup:
+    deps: [assert]
+    desc: Setup starship
+    cmds:
+      - task: minimal
+      - task: cleanup
+      - task: stow
+
+  minimal:
+    deps: [assert]
+    desc: Install starship
+    cmds:
+      - "{{.ROOT_DIR}}/taskfiles/scripts/03-bash.sh"
+
+  cleanup:
+    desc: Delete existent bash configuration
+    cmds:
+      - rm -rf {{.HOME}}/.bashrc
+      - rm -rf {{.HOME}}/.bash_profile
+      - rm -rf {{.HOME}}/.bash_logout
 
   stow:
     deps: [assert]
     desc: Symlink bashrc
     cmds:
-      - rm -rf {{.HOME}}/.bashrc
       - "stow --restow --verbose --dir={{.ROOT_DIR}} --target={{.HOME}} bash"
 
   destow:
     deps: [assert]
     desc: Symlink bashrc
     cmds:
-      - rm -rf {{.HOME}}/.bashrc
       - "stow --delete --verbose --dir={{.ROOT_DIR}} --target={{.HOME}} bash"
 

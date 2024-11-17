@@ -3,13 +3,6 @@ set -o vi
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-PS1='[\u@\h \W]\$ '
-
-case $- in
-*i*) ;;
-*) return ;;
-esac
-
 # avoid duplicate or starting with space to history.
 HISTCONTROL=ignoreboth
 
@@ -58,7 +51,16 @@ alias gsu='git stash -u -m'
 alias v='nvim'
 alias t='go-task'
 
-export PATH="/usr/local/bin:$PATH"
+alias path='echo -e "${PATH//:/\\n}"'
 
 # Created by `pipx` on 2024-11-17 13:16:30
 export PATH="$PATH:/home/lipwig/.local/bin"
+
+# shellcheck source=~/.local/fzf_functions.sh
+source "$HOME/.local/fzf_functions.sh"
+
+# Zoxide
+eval "$(zoxide init bash)"
+
+# Starship
+eval "$(starship init bash)"
