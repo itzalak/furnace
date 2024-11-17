@@ -1,3 +1,18 @@
+## v0.1.8 (2024-11-17)
+
+### Changed
+
+- Update neovim
+
+### Fixed
+
+- correct python installation script
+- Add xclip to minimal installation
+
+### Notes
+
+- Update installation order
+
 ## v0.1.7 (2024-11-17)
 
 ### Fixed
