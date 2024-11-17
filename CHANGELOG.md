@@ -1,3 +1,9 @@
+## v0.1.12 (2024-11-17)
+
+### Changed
+
+- improve bash scripts
+
 ## v0.1.11 (2024-11-17)
 
 ### Changed
