@@ -35,7 +35,7 @@ tasks:
       - task: assert
         vars:
           REQUIRED_TOOLS: pacman, git, stow
-      - task: submodules:init_neovim
+      - task: :submodules:init_neovim
       - task: minimal
       - task: stow
     silent: true
