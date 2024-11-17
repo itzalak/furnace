@@ -21,7 +21,17 @@ Personal laboratory mostly for experimental dotfiles in linux
 
 ## Installation
 
-- Describe the installation process if it applies
+Clone this repository
+
+```shell
+git clone git@github.com:itzalak/furnace.git foundry/furnace
+```
+
+Run minimal setup script to install required tools
+
+```shell
+curl -fsSL https://raw.githubusercontent.com/itzalak/furnace/refs/heads/main/taskfiles/scripts/00-minimal-setup.sh | bash
+```
 
 ## Requirements
 
