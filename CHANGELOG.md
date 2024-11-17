@@ -1,3 +1,11 @@
+## v0.1.10 (2024-11-17)
+
+### Changed
+
+- Update bash installation
+- update minimal installation script
+- update nvim
+
 ## v0.1.9 (2024-11-17)
 
 ### Changed
