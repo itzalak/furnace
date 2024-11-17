@@ -18,10 +18,9 @@ Relevant documentation
 
 Stuff I am concerned
 
-- Not sure about btrfs and partitions
-- Disk partitions for dual boot
-- Can I use calamares? or ALCI?
-    - <https://github.com/arch-linux-calamares-installer/alci-iso-dev>
+- Not sure  how to setup dual boot with btrfs and partitions
+    - Seems resource intensive and error prone
+    - Disk management can be done outside the app, and then mounted
 - <https://wiki.archlinux.org/title/Partitioning#Example_layouts>
 - Look into <https://gitlab.com/btrfs-assistant/btrfs-assistant>
 - <https://wiki.archlinux.org/title/Snapper>
@@ -37,6 +36,5 @@ Stuff I am concerned
     - unknown impact on steam
     - open drivers will allow me to keep using ly
     - probably don't need supergfxctl
-- nvidia-open might not work with the LTS kernel
 - I am starting to think asusctl is not reasonable or valuable, optionally there is rog-daemon, still unsure
     - <https://aur.archlinux.org/packages/rog-daemon>
