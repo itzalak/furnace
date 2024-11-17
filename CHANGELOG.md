@@ -1,3 +1,9 @@
+## v0.1.6 (2024-11-17)
+
+### Changed
+
+- add bluetooth setup
+
 ## v0.1.5 (2024-11-17)
 
 ### Fixed
