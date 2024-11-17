@@ -20,6 +20,7 @@ PKGS=(
   starship
   stow
   wezterm
+  xclip
   zsh
 )
 
