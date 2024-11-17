@@ -1,3 +1,11 @@
+## v0.1.3 (2024-11-17)
+
+### Changed
+
+- add submodules taskfile
+- add refresh venv to poetry taskfile
+- update minimal setup installation
+
 ## v0.1.2 (2024-11-10)
 
 ### Changed
