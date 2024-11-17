@@ -28,13 +28,13 @@ tasks:
   setup:
     desc: Pynvim and pipx installation
     cmds:
-      - task: install
+      - task: minimal
       - task: pipx
       - task: pyenv
     silent: true
 
-  install:
-    desc: Installation of python related packages
+  minimal:
+    desc: Minimal installation of python related packages with pacman
     platforms: [linux]
     cmds:
       - task: assert

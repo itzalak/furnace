@@ -4,6 +4,7 @@ includes:
   python: ./taskfiles/taskfile.python.yml
   precommit: ./taskfiles/taskfile.precommit.yml
   poetry: ./taskfiles/taskfile.poetry.yml
+  submodules: ./taskfiles/taskfile.submodules.yml
   neovim: ./taskfiles/taskfile.neovim.yml
 
 tasks:

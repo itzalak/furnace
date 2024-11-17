@@ -1,0 +1,47 @@
+version: '3'
+
+vars:
+  INIT: git submodule update --init
+  DEINIT: git submodule deinit
+  NEOVIM_PATH: "/nvim"
+
+tasks:
+
+  default:
+    internal: true
+    desc: Default
+    cmds:
+      - |
+        echo "Working dir: {{.USER_WORKING_DIR}}"
+        echo "OS: {{OS}}"
+        task --list
+    silent: true
+
+  assert:
+    cmds:
+      - for:
+          var: REQUIRED_TOOLS
+          split: ','
+          as: TOOL
+        cmd: |
+          [ -n "$(which {{ .TOOL }})" ] || ( \
+            echo "ERROR: `{{ .TOOL }}` not found" && exit 1; \
+          )
+    silent: true
+    internal: true
+    vars:
+      REQUIRED_TOOLS: git
+
+  init_neovim:
+    desc: Initialize neovim submodule
+    cmds:
+      - "{{.INIT}} {{.ROOT_DIR}}{{.NEOVIM_PATH}}"
+
+  deinit_neovim:
+    deps: [assert]
+    desc: Remove neovim submodules
+    prompt: ARE YOU SURE YOU WANT TO REMOVE THE SUBMODULES
+    cmds:
+      - "{{.DEINIT}} {{.ROOT_DIR}}{{.NEOVIM_PATH}}"
+      - "rm -rf {{.ROOT_DIR}}/.git/modules{{.NEOVIM_PATH}}"
+      - "git rm {{.ROOT_DIR}}{{.NEOVIM_PATH}}"

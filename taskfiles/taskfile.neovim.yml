@@ -29,6 +29,17 @@ tasks:
     silent: true
     internal: true
 
+  setup:
+    desc: Install and setup neovim
+    cmds:
+      - task: assert
+        vars:
+          REQUIRED_TOOLS: pacman, git, stow
+      - task: minimal
+      - task: submodules:init_neovim
+      - task: stow
+    silent: true
+
   minimal:
     desc: Minimal installation of neovim and required packages
     platforms: [linux]
