@@ -8,17 +8,21 @@ PKGS=(
   # Apps
   alacritty
   bat
+  curl
   fd
   firefox
   fzf
   git
   go-task
+  man-db
+  man-pages
   neovim
   openssh
   ranger
   ripgrep
   starship
   stow
+  wget
   wezterm
   xclip
   zsh
