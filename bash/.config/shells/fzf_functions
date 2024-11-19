@@ -1,5 +1,3 @@
-#!/bin/bash
-
 # Find directory with zoxide and fzf
 zd() {
     local dir

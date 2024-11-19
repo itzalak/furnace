@@ -4,5 +4,5 @@
 
 [[ -f ~/.bashrc ]] && . ~/.bashrc
 
-# Created by `pipx` on 2024-11-17 13:16:30
-export PATH="$PATH:/home/lipwig/.local/bin"
+# Created by `pipx`
+export PATH="$PATH:$HOME/.local/bin"
