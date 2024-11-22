@@ -1,3 +1,13 @@
+## v0.1.13 (2024-11-22)
+
+### Changed
+
+- update python taskfiles
+- refresh bash configuration
+- update bash configuration
+- update bashrc
+- update pre commit plugins
+
 ## v0.1.12 (2024-11-17)
 
 ### Changed
