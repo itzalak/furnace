@@ -2,19 +2,18 @@
 
 set -uo pipefail
 
-PKGS=(
-  # Python
+PYTHON_PKGS=(
   python
   pyenv
   python-pip
   python-pipx
 )
 
-echo "Installing required packages for development"
+echo "Installing required python packages"
 
-for PKG in "${PKGS[@]}"; do
+for PKG in "${PYTHON_PKGS[@]}"; do
   echo "Installing package: $PKG"
   sudo pacman -S "$PKG" --noconfirm --needed
 done
 
-echo "Development setup is complete"
+echo "Installation of python packages completed successfully."

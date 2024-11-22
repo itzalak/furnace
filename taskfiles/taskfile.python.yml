@@ -50,13 +50,7 @@ tasks:
       - task: assert
         vars:
           REQUIRED_TOOLS: python, pip
-      - pipx install black
-      - pipx install ruff
-      - pipx install poetry
-      - pipx install commitizen
-      - pipx install pre-commit
-      - pipx install cookiecutter
-      - pipx ensurepath
+      - "{{.ROOT_DIR}}/taskfiles/scripts/12-pipx.sh"
 
   pyenv:
     internal: true
