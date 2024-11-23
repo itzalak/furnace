@@ -1,11 +1,12 @@
 version: '3'
 
 includes:
-  bash: ./taskfiles/taskfile.bash.yml
   bluetooth: ./taskfiles/taskfile.bluetooth.yml
+  fonts: ./taskfiles/taskfile.fonts.yml
   python: ./taskfiles/taskfile.python.yml
   precommit: ./taskfiles/taskfile.precommit.yml
   poetry: ./taskfiles/taskfile.poetry.yml
+  shell: ./taskfiles/taskfile.shell.yml
   submodules: ./taskfiles/taskfile.submodules.yml
   neovim: ./taskfiles/taskfile.neovim.yml
 

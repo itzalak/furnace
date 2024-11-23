@@ -29,7 +29,7 @@ tasks:
 
   setup:
     deps: [assert]
-    desc: Setup starship
+    desc: Setup shell
     cmds:
       - task: minimal
       - task: cleanup
@@ -37,12 +37,12 @@ tasks:
 
   minimal:
     deps: [assert]
-    desc: Install starship
+    desc: Install shell dependencies
     cmds:
-      - "{{.ROOT_DIR}}/taskfiles/scripts/03-bash.sh"
+      - "{{.ROOT_DIR}}/taskfiles/scripts/03-shell.sh"
 
   cleanup:
-    desc: Delete existent bash configuration
+    desc: Delete existent shell configuration
     cmds:
       - rm -rf {{.HOME}}/.bashrc
       - rm -rf {{.HOME}}/.bash_profile
@@ -50,13 +50,13 @@ tasks:
 
   stow:
     deps: [assert]
-    desc: Symlink bashrc
+    desc: Symlink shell configuration
     cmds:
-      - "stow --restow --verbose --dir={{.ROOT_DIR}} --target={{.HOME}} bash"
+      - "stow --restow --verbose --dir={{.ROOT_DIR}} --target={{.HOME}} shell"
 
   destow:
     deps: [assert]
     desc: Symlink bashrc
     cmds:
-      - "stow --delete --verbose --dir={{.ROOT_DIR}} --target={{.HOME}} bash"
+      - "stow --delete --verbose --dir={{.ROOT_DIR}} --target={{.HOME}} shell"
 
