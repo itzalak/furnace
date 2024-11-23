@@ -24,8 +24,12 @@ export XDG_STATE_HOME="$HOME/.local/state"
 # Created by `pipx`
 export PATH="$PATH:$HOME/.local/bin"
 
-source "$XDG_CONFIG_HOME/shells/alias"
-source "$XDG_CONFIG_HOME/shells/fzf_functions"
+HELPERS_DIRECTORY="$XDG_CONFIG_HOME/shells/"
+for file in "$HELPERS_DIRECTORY"/*.sh; do
+    if [ -f "$file" ]; then
+        source "$file"
+    fi
+done
 
 # Zoxide
 eval "$(zoxide init bash)"
