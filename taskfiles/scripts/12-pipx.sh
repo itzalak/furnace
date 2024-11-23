@@ -3,6 +3,7 @@
 set -uo pipefail
 
 # Function to check for required tools
+# https://github.com/pyenv/pyenv
 check_required_tools() {
   local tools=("$@")
   for tool in "${tools[@]}"; do

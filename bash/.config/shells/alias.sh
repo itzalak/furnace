@@ -62,3 +62,5 @@ alias mv='mv -iv'
 
 alias v='nvim'
 alias t='go-task'
+
+alias path='echo -e "${PATH//:/\\n}"'
