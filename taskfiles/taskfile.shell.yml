@@ -32,6 +32,7 @@ tasks:
     desc: Setup shell
     cmds:
       - task: minimal
+      - task: fonts
       - task: cleanup
       - task: stow
 
@@ -47,6 +48,12 @@ tasks:
       - rm -rf {{.HOME}}/.bashrc
       - rm -rf {{.HOME}}/.bash_profile
       - rm -rf {{.HOME}}/.bash_logout
+
+  fonts:
+    deps: [assert]
+    desc: Install fonts
+    cmds:
+      - "{{.ROOT_DIR}}/taskfiles/scripts/04-fonts.sh"
 
   stow:
     deps: [assert]
