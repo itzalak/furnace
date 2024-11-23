@@ -1,3 +1,13 @@
+## v0.1.14 (2024-11-23)
+
+### Changed
+
+- simplify font installation
+- update shell configurations
+- Add path to bashrc
+- update nvim
+- correct bash loading for shell scripts
+
 ## v0.1.13 (2024-11-22)
 
 ### Changed
