@@ -1,30 +1,17 @@
 # furnace
 
-Personal laboratory mostly for experimental dotfiles in linux
+Exploration of archlinux installation based on XFCE
 
-## Table of contents
+This is a WIP.
 
-- [Introduction](#introduction)
-- [Features](#features)
-- [Installation](#installation)
-- [Requirements](#requirements)
-- [Examples](#examples)
-- [Acknowledgments](#acknowledgments)
-
-## Introduction
-
-- Introduce the reason for the existence of this project
-
-## Features
-
-- Relevant features, if any.
+There is no expected outcome besides experimentation.
 
 ## Installation
 
 Clone this repository
 
 ```shell
-git clone git@github.com:itzalak/furnace.git foundry/furnace
+git clone git@github.com:itzalak/furnace.git {{destination/directory}}
 ```
 
 Run minimal setup script to install required tools
@@ -56,15 +43,3 @@ Missing but important
 
 - Git alias
 - Bash not recognizing paths after installation of python
-
-## Requirements
-
-- Describe any requirements
-
-## Examples
-
-- Examples of usage, commands, etc.
-
-## Acknowledgments
-
-- Acknowledgments, alternatives, etc
