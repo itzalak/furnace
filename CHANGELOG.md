@@ -1,3 +1,10 @@
+## v0.1.16 (2024-12-15)
+
+### Changed
+
+- update precommit, apply suggestions
+- adjust shell and neovim
+
 ## v0.1.15 (2024-12-01)
 
 ### Changed
