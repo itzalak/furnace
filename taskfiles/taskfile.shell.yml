@@ -66,4 +66,3 @@ tasks:
     desc: Symlink bashrc
     cmds:
       - "stow --delete --verbose --dir={{.ROOT_DIR}} --target={{.HOME}} shell"
-

@@ -63,4 +63,3 @@ tasks:
         vars:
           REQUIRED_TOOLS: nvim, stow
       - "stow --delete --verbose --dir={{.ROOT_DIR}}/nvim --target={{.HOME}} nvim"
-
