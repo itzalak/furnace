@@ -3,7 +3,7 @@ version: '3'
 vars:
   INIT: git submodule update --init
   DEINIT: git submodule deinit
-  NEOVIM_PATH: "/nvim"
+  NEOVIM_PATH: "/neovim/.config/nvim"
 
 tasks:
 

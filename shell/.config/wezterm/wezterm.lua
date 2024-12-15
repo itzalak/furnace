@@ -12,13 +12,13 @@ config.hide_tab_bar_if_only_one_tab = true
 config.show_tab_index_in_tab_bar = true
 
 -- Fonts
-config.font = wezterm.font_with_fallback({
-    { family = "IosevkaTerm Nerd Font Mono", weight = "Medium" },
-    { family = "Iosevka Nerd Font Mono", weight = "Medium" },
-    "FiraCode",
-    "Hack",
-    "Noto Color Emoji",
-})
+config.font = wezterm.font_with_fallback {
+    { family = "IosevkaTerm Nerd Font", weight = "Bold" },
+    { family = "Iosevka Nerd Font", weight = "Bold" },
+    { family = "Fira Code", weight = "Bold" },
+    { family = "Material Design Icons", weight = "Bold" },
+    { family = "Noto Color Emoji", weight = "Bold" },
+}
 config.font_size = 16
 config.warn_about_missing_glyphs = true
 config.bold_brightens_ansi_colors = true
