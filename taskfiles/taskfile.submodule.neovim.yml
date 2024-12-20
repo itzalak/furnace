@@ -5,7 +5,7 @@ vars:
   DEINIT: git submodule deinit
   ADD: git submodule add
   LOCAL_PATH: "/neovim/.config"
-  FULL_PATH: "{{.ROOT_DIR}}{{.LOCAL_PATH}}/nvim"
+  FULL_PATH: "{{.ROOT_DIR}}/neovim/.config/nvim"
 
 tasks:
 
