@@ -1,3 +1,6 @@
 [submodule "neovim/.config/nvim"]
 	path = neovim/.config/nvim
 	url = git@github.com:itzalak/nvim.git
+[submodule "/Users/simaof/foundry/furnace/neovim/.config/nvim"]
+	path = /Users/simaof/foundry/furnace/neovim/.config/nvim
+	url = git@github.com:itzalak/nvim.git

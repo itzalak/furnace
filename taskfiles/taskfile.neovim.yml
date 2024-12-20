@@ -1,5 +1,8 @@
 version: '3'
 
+vars:
+  FULL_PATH: "{{.ROOT_DIR}}{{.LOCAL_PATH}}/nvim"
+
 tasks:
 
   default:
@@ -31,7 +34,7 @@ tasks:
       - task: assert
         vars:
           REQUIRED_TOOLS: pacman, git, stow
-      - task: :submodules:init_neovim
+      - task: :submodule-neovim:init_neovim
       - task: minimal
       - task: stow
     silent: true
@@ -43,7 +46,7 @@ tasks:
       - task: assert
         vars:
           REQUIRED_TOOLS: pacman
-      - "{{.ROOT_DIR}}/nvim/installation/pacman-neovim.sh"
+      - "{{.FULL_PATH}}/installation/pacman-neovim.sh"
 
   stow:
     deps: [assert]
@@ -52,7 +55,7 @@ tasks:
       - task: assert
         vars:
           REQUIRED_TOOLS: nvim, stow
-      - "stow --restow --verbose --dir={{.ROOT_DIR}}/nvim --target={{.HOME}} nvim"
+      - "stow --restow --verbose --dir={{.ROOT_DIR}} --target={{.HOME}} neovim"
 
 
   destow:
@@ -62,4 +65,4 @@ tasks:
       - task: assert
         vars:
           REQUIRED_TOOLS: nvim, stow
-      - "stow --delete --verbose --dir={{.ROOT_DIR}}/nvim --target={{.HOME}} nvim"
+      - "stow --delete --verbose --dir={{.ROOT_DIR}} --target={{.HOME}} neovim"

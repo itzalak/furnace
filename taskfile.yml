@@ -6,7 +6,7 @@ includes:
   precommit: ./taskfiles/taskfile.precommit.yml
   poetry: ./taskfiles/taskfile.poetry.yml
   shell: ./taskfiles/taskfile.shell.yml
-  submodules: ./taskfiles/taskfile.submodules.yml
+  submodule_neovim: ./taskfiles/taskfile.submodule.neovim.yml
   neovim: ./taskfiles/taskfile.neovim.yml
 
 tasks:
