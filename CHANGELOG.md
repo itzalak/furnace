@@ -1,3 +1,10 @@
+## v0.1.17 (2024-12-20)
+
+### Changed
+
+- fix neovim taskfiles
+- update neovim taskfiles
+
 ## v0.1.16 (2024-12-15)
 
 ### Changed

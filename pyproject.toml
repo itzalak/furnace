@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "furnace"
-version = "0.1.16"
+version = "0.1.17"
 description = "Personal laboratory mostly for experimental dotfiles in linux"
 authors = ["Itzalak <itzalak@tuta.io>"]
 license = ""
@@ -29,7 +29,7 @@ build-backend = "poetry.core.masonry.api"
 name = "cz_customize"
 tag_format = "v$major.$minor.$patch"
 version_scheme = "semver"
-version = "0.1.16"
+version = "0.1.17"
 update_changelog_on_bump = true
 version_files = ["pyproject.toml"]
 
