@@ -1,7 +1,7 @@
 version: '3'
 
 vars:
-  FULL_PATH: "{{.ROOT_DIR}}/neovim/.config/nvim"
+  PATH: "neovim/.config/nvim"
 
 tasks:
 
@@ -46,7 +46,7 @@ tasks:
       - task: assert
         vars:
           REQUIRED_TOOLS: pacman
-      - "{{.FULL_PATH}}/installation/pacman-neovim.sh"
+      - "{{.ROOT_DIR}}/{{.PATH}}/installation/pacman-neovim.sh"
 
   stow:
     deps: [assert]

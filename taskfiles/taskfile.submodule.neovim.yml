@@ -4,8 +4,7 @@ vars:
   INIT: git submodule update --init
   DEINIT: git submodule deinit
   ADD: git submodule add
-  LOCAL_PATH: "/neovim/.config"
-  FULL_PATH: "{{.ROOT_DIR}}/neovim/.config/nvim"
+  LOCAL_PATH: "neovim/.config"
 
 tasks:
 
@@ -37,21 +36,21 @@ tasks:
   init_neovim:
     desc: Initialize neovim submodule
     cmds:
-      - "{{.INIT}} {{.FULL_PATH}}"
+      - "{{.INIT}} {{.LOCAL_PATH}}/nvim"
 
   deinit_neovim:
     deps: [assert]
     desc: Remove neovim submodule
     prompt: ARE YOU SURE YOU WANT TO REMOVE THE SUBMODULES
     cmds:
-      - "{{.DEINIT}} {{.FULL_PATH}}"
-      - "rm -rf {{.ROOT_DIR}}/.git/modules{{.LOCAL_PATH}}/nvim"
-      - "git rm {{.FULL_PATH}}"
+      - "{{.DEINIT}} {{.LOCAL_PATH}}/nvim"
+      - "rm -rf {{.ROOT_DIR}}/.git/modules/{{.LOCAL_PATH}}/nvim"
+      - "git rm {{.LOCAL_PATH}}/nvim"
 
   add_neovim:
     deps: [assert]
     desc: Add neovim git submodule
     prompt: ARE YOU SURE YOU WANT TO ADD THE SUBMODULE
     cmds:
-      - "mkdir -p {{.ROOT_DIR}}{{.LOCAL_PATH}}"
-      - "{{.ADD}} git@github.com:itzalak/nvim.git {{.FULL_PATH}}"
+      - "mkdir -p {{.ROOT_DIR}}/{{.LOCAL_PATH}}"
+      - "{{.ADD}} git@github.com:itzalak/nvim.git {{.LOCAL_PATH}}/nvim"
